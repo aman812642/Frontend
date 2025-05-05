@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Foodie World</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+
+    .animate-zoom {
+      opacity: 0;
+      transform: scale(0.95);
+      animation: zoomIn 0.8s forwards ease-out;
+    }
+    @keyframes zoomIn {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+
+    .glow-text {
+      text-shadow: 0 0 10px #facc15, 0 0 20px #facc15;
+      animation: glowPulse 2s ease-in-out infinite alternate;
+    }
+    @keyframes glowPulse {
+      0% {
+        text-shadow: 0 0 10px #facc15;
+      }
+      100% {
+        text-shadow: 0 0 20px #facc15;
+      }
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-900">
+
+
+  <nav class="bg-red-500 text-white">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <h1 class="text-xl font-bold">Foodie World</h1>
+      <ul class="hidden md:flex gap-6">
+        <li><a href="#" class="hover:text-yellow-300">Home</a></li>
+        <li><a href="about.html" class="hover:text-yellow-300">About</a></li>
+        <li class="relative group">
+          <button class="hover:text-yellow-300">Menu</button>
+          <ul class="absolute bg-white text-black mt-2 rounded shadow-lg hidden group-hover:block z-10 w-[10vw]">
+            <li class="px-4 py-2 hover:bg-gray-200">Veg Thali</li>
+            <li class="px-4 py-2 hover:bg-gray-200">Non-Veg Thali</li>
+            <li class="px-4 py-2 hover:bg-gray-200">Fast Food</li>
+            <li class="px-4 py-2 hover:bg-gray-200">Chaat</li>
+            <li class="px-4 py-2 hover:bg-gray-200">Soups</li>
+            <li class="px-4 py-2 hover:bg-gray-200">Pasta</li>
+          </ul>
+        </li>
+        <li><a href="#" class="hover:text-yellow-300">Order</a></li>
+        <li><a href="#" class="hover:text-yellow-300">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <div class="relative w-full h-[70vh] overflow-hidden">
+    <div id="imageContainer" class="flex h-full overflow-x-auto scroll-smooth snap-x snap-mandatory">
+      <img class="min-w-full h-full object-cover snap-center" src="https://images.unsplash.com/photo-1597699401474-e8714c1b7879?w=800" />
+      <img class="min-w-full h-full object-cover snap-center" src="https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?w=800" />
+      <img class="min-w-full h-full object-cover snap-center" src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=800" />
+    </div>
+    <button onclick="scrollToPrevious()" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black text-white p-2 rounded-full z-10">◀</button>
+    <button onclick="scrollToNext()" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black text-white p-2 rounded-full z-10">▶</button>
+  </div>
+
+
+  <section class="px-4 md:px-20 py-12">
+    <h2 class="text-center text-3xl font-bold text-yellow-500 glow-text mb-10">Top Foods</h2>
+
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Card -->
+      <div class="shadow-xl p-2 rounded-lg animate-zoom">
+        <img class="w-full h-48 object-cover rounded" src="https://images.unsplash.com/photo-1742281257687-092746ad6021?w=600" alt="Veg Thali">
+        <h3 class="text-center font-bold mt-2">Veg Thali</h3>
+      </div>
+      <div class="shadow-xl p-2 rounded-lg animate-zoom">
+        <img class="w-full h-48 object-cover rounded" src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=600" alt="Burger">
+        <h3 class="text-center font-bold mt-2">Veg Burger</h3>
+      </div>
+      <div class="shadow-xl p-2 rounded-lg animate-zoom">
+        <img class="w-full h-48 object-cover rounded" src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600" alt="Pizza">
+        <h3 class="text-center font-bold mt-2">Pizza</h3>
+      </div>
+      <div class="shadow-xl p-2 rounded-lg animate-zoom">
+        <img class="w-full h-48 object-cover rounded" src="https://plus.unsplash.com/premium_photo-1695029503412-29645ae2f47f?w=600" alt="Biryani">
+        <h3 class="text-center font-bold mt-2">Biryani</h3>
+      </div>
+      <div class="shadow-xl p-2 rounded-lg animate-zoom">
+        <img class="w-full h-48 object-cover rounded" src="https://images.unsplash.com/photo-1742281257687-092746ad6021?w=600" alt="Special Thali">
+        <h3 class="text-center font-bold mt-2">Special Thali</h3>
+      </div>
+      <div class="shadow-xl p-2 rounded-lg animate-zoom">
+        <img class="w-full h-48 object-cover rounded" src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=600" alt="Chicken Biryani">
+        <h3 class="text-center font-bold mt-2">Chicken Biryani</h3>
+      </div>
+      <div class="shadow-xl p-2 rounded-lg animate-zoom">
+        <img class="w-full h-48 object-cover rounded" src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600" alt="Samosa">
+        <h3 class="text-center font-bold mt-2">Samosa</h3>
+      </div>
+      <div class="shadow-xl p-2 rounded-lg animate-zoom">
+        <img class="w-full h-48 object-cover rounded" src="https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=600" alt="Pav Bhaji">
+        <h3 class="text-center font-bold mt-2">Pav Bhaji</h3>
+      </div>
+      <div class="shadow-xl p-2 rounded-lg animate-zoom">
+        <img class="w-full h-48 object-cover rounded" src="https://images.unsplash.com/photo-1625220194771-7ebdea0b70b9?w=600" alt="Momos">
+        <h3 class="text-center font-bold mt-2">Momos</h3>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="bg-gray-900 text-white py-8">
+    <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div>
+        <h4 class="font-bold mb-2">Foodie World</h4>
+        <p>Delicious food delivered to your doorstep. Experience the taste of tradition and freshness.</p>
+      </div>
+      <div>
+        <h4 class="font-bold mb-2">Quick Links</h4>
+        <ul>
+          <li><a href="#" class="hover:underline">Home</a></li>
+          <li><a href="about.html" class="hover:underline">About</a></li>
+          <li><a href="#" class="hover:underline">Menu</a></li>
+          <li><a href="#" class="hover:underline">Order</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold mb-2">Contact</h4>
+        <p>Email: contact@foodieworld.com</p>
+        <p>Phone: +91 12345 67890</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slider Script -->
+  <script>
+    const container = document.getElementById("imageContainer");
+    function scrollToNext() {
+      container.scrollBy({ left: window.innerWidth, behavior: "smooth" });
+    }
+    function scrollToPrevious() {
+      container.scrollBy({ left: -window.innerWidth, behavior: "smooth" });
+    }
+  </script>
+</body>
+</html>
